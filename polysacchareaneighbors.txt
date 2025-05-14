@@ -1,0 +1,2 @@
+spadesout/scaffolds.fasta	neighbors.txt/gonorrrhoeae.fna	95.076	604	681
+spadesout/scaffolds.fasta	neighbors.txt/polysaccharea.fna	94.31	581	681

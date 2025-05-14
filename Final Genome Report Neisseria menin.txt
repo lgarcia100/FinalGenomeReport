@@ -1,0 +1,35 @@
+Final Genome Report Neisseria meningitidis
+
+>Started work using Ubuntu on Windows
+>conda activate genomeanalysis
+>spades.py -1 SRR33290729_1.fastq.gz -2 SRR33290729_2.fastq.gz -o spadesout
+>ls to make sure I was in the correct location
+>abyss-pe name=assembly k=96 B=2G in='SRR33290729_1.fastq.gz SRR33290729_2.fastq.gz'
+>input ls again to visualize the file name
+>spades.py -1 Luis_1.fastq.gz -2 Luis_2.fastq.gz -o spadesout
+>input abyss-pe name=assembly k=96 B=2G in='Luis_1.fastq.gz
+ Luis_2.fastq.gz'
+>input mkdir abyssout
+mv assembly* abyssout/
+>loaded scaffolds on the Galaxy browser (Version 4.1.0)
+>quast.py abyssout/assembly-scaffolds.fa -o quastabyss
+>quast.py spadesout/scaffolds.fasta -o quastspades
+>Both inputs returned successful outputs on the Linux shell
+>Gathered both reports and screenshotted the results
+>Concluded that SPAdes resulted in the better assembly
+>barrnap --kingdom bac spadesout/scaffolds.fasta > rRNAsequences.gff
+>bedtools getfasta -fi spadesout/scaffolds.fasta -bed rRNAsequences.gff -fo rRNAsequences.fasta
+>mkdir rRNAinfo
+mv rRNAs* rRNAinfo/
+>input my scaffolds used for spades and abyss for prokka (Galaxy Version 1.14.6)
+>created a neighbors.txt file for FastANI
+>pico neighbors.txt
+>neighbors/gonorrhoeae.fna
+neighbors/polysaccharea.fna
+>fastANI -q spadesout/scaffolds.fasta --rl neighbors_list.txt -o neighbors.txt
+>
+>
+>
+>
+>
+>
